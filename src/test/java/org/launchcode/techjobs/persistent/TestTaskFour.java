@@ -216,17 +216,17 @@ public class TestTaskFour extends AbstractTest {
         listController.list(model);
     }
 
-//    @Test
-//    public void testSqlQuery () throws IOException {
-//        String queryFileContents = getFileContents("queries.sql");
-//
-//        Pattern queryPattern = Pattern.compile("SELECT\\s+\\*\\s+FROM\\s+skill" +
-//                "\\s*(LEFT|INNER)?\\s+JOIN\\s+job_skills\\s+ON\\s+(skill.id\\s+=\\s+job_skills.skills_id|job_skills.skills_id\\s+=\\s+skill.id)" +
-//                "(\\s*WHERE\\s+job_skills.jobs_id\\s+IS\\s+NOT\\s+NULL)?" +
-//                "\\s*ORDER\\s+BY\\s+name\\s+ASC;", Pattern.CASE_INSENSITIVE | Pattern.MULTILINE);
-//        Matcher queryMatcher = queryPattern.matcher(queryFileContents);
-//        boolean queryFound = queryMatcher.find();
-//        assertTrue(queryFound, "Task 4 SQL query is incorrect. Test your query against your database to find the error.");
-//    }
+    @Test
+    public void testSqlQuery () throws IOException {
+        String queryFileContents = getFileContents("queries.sql");
+
+        Pattern queryPattern = Pattern.compile("SELECT\\s+\\*\\s+FROM\\s+skill" +
+                "\\s*(LEFT|INNER)?\\s+JOIN\\s+job_skills\\s+ON\\s+(skill.id\\s+=\\s+job_skills.skills_id|job_skills.skills_id\\s+=\\s+skill.id)" +
+                "(\\s*WHERE\\s+job_skills.jobs_id\\s+IS\\s+NOT\\s+NULL)?" +
+                "\\s*ORDER\\s+BY\\s+name\\s+ASC;", Pattern.CASE_INSENSITIVE | Pattern.MULTILINE);
+        Matcher queryMatcher = queryPattern.matcher(queryFileContents);
+        boolean queryFound = queryMatcher.find();
+        assertTrue(queryFound, "Task 4 SQL query is incorrect. Test your query against your database to find the error.");
+    }
 
 }
